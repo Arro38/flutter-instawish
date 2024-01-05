@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instawish/components/user_avatar.dart';
 
 void main() {
   runApp(
@@ -32,34 +33,26 @@ void main() {
                 ),
               ),
             ]),
-        body: Container(
-          height: 100,
-          margin: EdgeInsets.only(top: 10),
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              for (var i = 0; i < 25; i++)
-                Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 18, vertical: 3),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.red,
-                          width: 2,
-                        ),
-                      ),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/avatar2.jpg'),
-                        radius: 35,
-                      ),
+        body: Column(
+          children: [
+            Container(
+              height: 100,
+              margin: EdgeInsets.only(top: 10),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  for (var i = 0; i < 25; i++)
+                    Column(
+                      children: [
+                        UserAvatar(filename: "avatar2.jpg", border: true),
+                        Text("User $i")
+                      ],
                     ),
-                    Text("User $i")
-                  ],
-                ),
-            ],
-          ),
+                ],
+              ),
+            ),
+            Text("TEST")
+          ],
         ),
       ),
     ),
