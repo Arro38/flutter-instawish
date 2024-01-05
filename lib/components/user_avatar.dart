@@ -25,7 +25,7 @@ class UserAvatar extends StatelessWidget {
           : null,
       child: CircleAvatar(
         backgroundImage: AssetImage('assets/$filename'),
-        radius: 35,
+        radius: 30,
       ),
     );
   }

@@ -51,7 +51,39 @@ void main() {
                 ],
               ),
             ),
-            Text("TEST")
+            SizedBox(
+              width: 500,
+              height: 200,
+              child: Stack(children: [
+                Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(top: 10, left: 50),
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 15,
+                        offset: Offset(0.0, 0.75),
+                      ),
+                    ],
+                    border: Border.all(
+                      color: Colors.grey.shade200,
+                      width: 2,
+                    ),
+                  ),
+                  child: Container(
+                      margin: EdgeInsets.only(left: 20),
+                      child: Text("Username")),
+                ),
+                Positioned(
+                  left: -10,
+                  child: UserAvatar(filename: "avatar2.jpg", border: true),
+                ),
+              ]),
+            )
           ],
         ),
       ),
